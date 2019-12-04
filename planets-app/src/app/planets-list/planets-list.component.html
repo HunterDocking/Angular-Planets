@@ -1,9 +1,13 @@
 <br>
 <br>
-<button (click)="onClick()"> Sort by Distance To Sun </button>
+<button (click)="onClickSort()"> Sort by Distance To Sun </button>
 
 <ul>
     <li *ngFor="let planet of Service.PLANETS">
-        <app-planet-detail [Planet]="planet"></app-planet-detail>
+        <app-planet-detail 
+        [Planet]="planet"
+        (planetDelete)="removePlanetFromList(planet)">
+        
+        </app-planet-detail>
     </li>
 </ul>

@@ -26,4 +26,12 @@ export class PlanetService {
       return planet1 - planet2;
     });
   }
+
+  // Delete a planet from the array of existing planets 
+  deletePlanet(Planet: Planet) {
+    const index: number = this.PLANETS.indexOf(Planet);
+    if (index !== -1) {
+      this.PLANETS.splice(index, 1)
+    }
+  }
 }

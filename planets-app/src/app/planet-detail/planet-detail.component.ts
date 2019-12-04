@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { PlanetService } from '../planet.service';
 import { Planet } from '../planet';
@@ -11,19 +11,16 @@ import { Planet } from '../planet';
 export class PlanetDetailComponent implements OnInit {
   
   @Input() Planet: Planet;
-  
-  Service: PlanetService;
+  @Output() planetDelete : EventEmitter<void> = new EventEmitter<void>();
 
 
-  constructor(service: PlanetService) {
-    this.Service = service;
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  onClick(){
-    this.Service.sortPlanets();
+  onClickDelete() {
+    this.planetDelete.emit();
   }
-  
 }

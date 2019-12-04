@@ -20,8 +20,11 @@ export class PlanetsListComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  onClick() {
+  onClickSort() {
     this.Service.sortPlanets();
+  }
+
+  removePlanetFromList(Planet: Planet) {
+    this.Service.deletePlanet(Planet);
   }
 }
