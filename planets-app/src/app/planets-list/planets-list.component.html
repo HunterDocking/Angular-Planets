@@ -1,1 +1,9 @@
-<p>planets-list works!</p>
+<br>
+<br>
+<button (click)="onClick()"> Sort by Distance To Sun </button>
+
+<ul>
+    <li *ngFor="let planet of Service.PLANETS">
+        <app-planet-detail [Planet]="planet"></app-planet-detail>
+    </li>
+</ul>

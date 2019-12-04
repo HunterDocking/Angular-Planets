@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+
+import { PlanetService } from '../planet.service';
+import { Planet } from '../planet';
 
 @Component({
   selector: 'app-planet-detail',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./planet-detail.component.css']
 })
 export class PlanetDetailComponent implements OnInit {
+  
+  @Input() Planet: Planet;
+  
+  Service: PlanetService;
 
-  constructor() { }
+
+  constructor(service: PlanetService) {
+    this.Service = service;
+  }
 
   ngOnInit() {
   }
 
+  onClick(){
+    this.Service.sortPlanets();
+  }
+  
 }
