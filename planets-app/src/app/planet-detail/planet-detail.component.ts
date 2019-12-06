@@ -23,4 +23,8 @@ export class PlanetDetailComponent implements OnInit {
   onClickDelete() {
     this.planetDelete.emit();
   }
+
+  onClickEdit() {
+    this.planetDelete.emit();
+  }
 }
